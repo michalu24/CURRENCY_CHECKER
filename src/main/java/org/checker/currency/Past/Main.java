@@ -18,25 +18,27 @@ public class Main {
 
 
     public static void main(String[] args) throws IOException {
-        OkHttpClient client = new OkHttpClient();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj date kursu:\n");
+//        OkHttpClient client = new OkHttpClient();
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Podaj date kursu:\n");
+//
+//        String date= scanner.next();
+//        Request request = new Request.Builder()
+//                .url("https://api.currencyscoop.com/v1/historical"+
+//                        "?api_key=14707854aef3b9afe4c2a61c04f6314c"+
+//                        "&date="+date+"&base=PLN")
+//                .get()
+//                .build();
+//
+//        Response response = client.newCall(request).execute();
+//        String jsonstring = Objects.requireNonNull(response.body()).string();
+//        JsonDataConverter dataConverter = new JsonDataConverter();
+//        Example example = dataConverter.convert(jsonstring);
+//        System.out.println(example.getResponse().getRates().getEUR());
 
-        String date= scanner.next();
-        Request request = new Request.Builder()
-                .url("https://api.currencyscoop.com/v1/historical"+
-                        "?api_key=14707854aef3b9afe4c2a61c04f6314c"+
-                        "&date="+date+"&base=PLN")
-                .get()
-                .build();
+        SearchRatesByDate newSearch = new SearchRatesByDate();
 
-        Response response = client.newCall(request).execute();
-        String jsonstring = Objects.requireNonNull(response.body()).string();
-        JsonDataConverter dataConverter = new JsonDataConverter();
-        Example example = dataConverter.convert(jsonstring);
-        System.out.println(example.getResponse().getRates().getEUR());
-
-
+        System.out.println(newSearch.findRateOfEUR(LocalDate.of(2020, 3, 3)));
 
 
     }
