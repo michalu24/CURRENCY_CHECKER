@@ -40,7 +40,7 @@ public class SearchRatesByDate implements SearchRates {
     }
 
     @Override
-    public double findRateOfDOL(LocalDate date) throws IOException {
+    public double findRateOfUSD(LocalDate date) throws IOException {
         HttpClientProvider provider = new HttpClientProvider();
 
         DateToString getString = new DateToString();

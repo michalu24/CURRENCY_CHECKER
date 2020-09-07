@@ -1,18 +1,11 @@
 package org.checker.currency.Past;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import org.checker.currency.Past.Classes.Example;
-import org.checker.currency.Past.Classes.Rates;
-import org.checker.currency.Past.Converter.JsonDataConverter;
+import org.checker.currency.Past.ConversionAtTheRateOnDate.ConversionAtTheRateOnDate;
 import org.checker.currency.Past.GatingRates.SearchRates;
 import org.checker.currency.Past.GatingRates.SearchRatesByDate;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Objects;
-import java.util.Scanner;
 
 public class Main {
 
@@ -36,11 +29,17 @@ public class Main {
 //        Example example = dataConverter.convert(jsonstring);
 //        System.out.println(example.getResponse().getRates().getEUR());
 
-        SearchRatesByDate newSearch = new SearchRatesByDate();
+//        SearchRatesByDate newSearch = new SearchRatesByDate();
 
-        System.out.println(newSearch.findRateOfEUR(LocalDate.of(2020, 3, 3)));
+//        System.out.println(newSearch.findRateOfEUR(LocalDate.of(2020, 3, 3)));
 
+        ConversionAtTheRateOnDate conversion = new ConversionAtTheRateOnDate();
 
+        System.out.println(conversion.PlnToEUR(200, LocalDate.of(2019, 10, 10)));
+
+        SearchRates searchRates = new SearchRatesByDate();
+        System.out.println(searchRates.findRateOfEUR(LocalDate.of(2020, 1, 1)));
+        
     }
 
 }
