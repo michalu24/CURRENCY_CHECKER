@@ -29,10 +29,20 @@ class SearchRatesByDateTest {
     }
 
     @Test
-    void findRateOfUSD() {
+    void findRateOfUSD() throws IOException {
+        //given
+        double result = search.findRateOfUSD(LocalDate.of(2010, 3, 3));
+        //when
+        //then
+        assertThat(result, is(closeTo(0.3, 0.1)));
     }
 
     @Test
-    void findRateOfGBP() {
+    void findRateOfGBP() throws IOException {
+        //given
+        double result = search.findRateOfGBP(LocalDate.of(2010, 3, 3));
+        //when
+        //then
+        assertThat(result, is(closeTo(0.2, 0.1)));
     }
 }
