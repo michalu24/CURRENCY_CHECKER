@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "code": 200,
+    "disclaimer": "Usage subject to terms: https://currencyscoop.com/terms"
+  },
+  "response": {
+    "fiats": [
+
+      {
+        "currency_name": "United Arab Emirates dirham",
+        "currency_code": "AED",
+        "decimal_units": "2",
+        "countries": [
+          "United Arab Emirates"
+        ]
+      },
+
+      {
+        "currency_name": "Afghan afghani",
+        "currency_code": "AFN",
+        "decimal_units": "2",
+        "countries": [
+          "Afghanistan"
+        ]
+      }
+    ]
+  }
+}
