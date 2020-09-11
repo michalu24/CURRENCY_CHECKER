@@ -3,6 +3,7 @@ package org.checker.currency.Past;
 import org.checker.currency.Past.ConversionAtTheRateOnDate.ConversionAtTheRateOnDate;
 import org.checker.currency.Past.GatingRates.SearchRates;
 import org.checker.currency.Past.GatingRates.SearchRatesByDate;
+import org.checker.currency.Past.Window.PastCurrencyWindow;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -33,12 +34,13 @@ public class Main {
 
 //        System.out.println(newSearch.findRateOfEUR(LocalDate.of(2020, 3, 3)));
 
-        ConversionAtTheRateOnDate conversion = new ConversionAtTheRateOnDate();
 
-        System.out.println(conversion.PlnToEUR(200, LocalDate.of(2019, 10, 10)));
+//        System.out.println(conversion.PlnToEUR(200, LocalDate.of(2019, 10, 10)));
+//
+//        SearchRates searchRates = new SearchRatesByDate();
+//        System.out.println(searchRates.findRateOfEUR(LocalDate.of(2020, 1, 1)));
 
-        SearchRates searchRates = new SearchRatesByDate();
-        System.out.println(searchRates.findRateOfEUR(LocalDate.of(2020, 1, 1)));
+        PastCurrencyWindow window = new PastCurrencyWindow();
         
     }
 
