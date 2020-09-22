@@ -8,7 +8,7 @@ public class MainTest {
 
         BuildResponse buildResponse = new BuildResponse();
 
-        double value = buildResponse.createResponse(impl);
+        double value = buildResponse.createResponse("usd","pln","399");
         System.out.println(value);
 
     }
