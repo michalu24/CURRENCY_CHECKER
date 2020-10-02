@@ -162,12 +162,12 @@ public class Windownew extends JFrame implements ActionListener {
 
 
                 str.add(pocz);
-                Uwagi.setText("Możesz przejść dalej");
 
 
             } else {
                 str.clear();
                 Uwagi.setText("Nie ma takiej waluty");
+                clearTextFiels();
 
 
             }
@@ -184,14 +184,13 @@ public class Windownew extends JFrame implements ActionListener {
             if (validate2) {
 
                 str.add(konc);
-                Uwagi.setText("Teraz wciśnij przycisk zamiany");
 
 
             } else {
 
                 str.remove(0);
                 Uwagi.setText("Nie ma takiej waluty");
-
+                clearTextFiels();
 
             }
             String money = null;
@@ -207,7 +206,7 @@ public class Windownew extends JFrame implements ActionListener {
             if (!numeric) {
                 Uwagi.setText("To nie jest liczba");
                 str.remove(1);
-
+                clearTextFiels();
 
             } else {
 
@@ -231,7 +230,7 @@ public class Windownew extends JFrame implements ActionListener {
                 }
                 double roundValue = Math.round(response1);
                 String wyniki = String.valueOf(roundValue);
-                wynik.setText(wyniki);
+                wynik.setText(wyniki  + " \t" + str.get(1));
 //            try {
 //                response = buildResponse.createResponse(str.get(0),str.get(1),str.get(2));
 //            } catch (IOException ioException) {
@@ -243,14 +242,13 @@ public class Windownew extends JFrame implements ActionListener {
             } else {
                 przeliczButton = null;
                 str.clear();
-                Uwagi.setText("Nie wszyskie pola wypełnione");
+//                Uwagi.setText("Nie wszyskie pola wypełnione");
 
 
             }
 
 //        }
         }
-
 
 
     }
@@ -262,5 +260,11 @@ public class Windownew extends JFrame implements ActionListener {
         } catch (NumberFormatException e) {
             return false;
         }
+    }
+
+    private void clearTextFiels() {
+        wpiszpocz.setText("");
+        wpiszkonc.setText("");
+        wpiszpieniadze.setText("");
     }
 }
