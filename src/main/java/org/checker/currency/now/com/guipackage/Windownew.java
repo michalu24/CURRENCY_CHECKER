@@ -17,6 +17,7 @@ import java.util.NoSuchElementException;
 
 public class Windownew extends JFrame implements ActionListener {
     ArrayList<String> str = new ArrayList<>();
+    ArrayList<String> uwagi = new ArrayList<>();
     private JPanel panelglowny;
     private JButton przeliczButton;
     ;
@@ -166,7 +167,7 @@ public class Windownew extends JFrame implements ActionListener {
 
             } else {
                 str.clear();
-                Uwagi.setText("Nie ma takiej waluty");
+                uwagi.add("nie ma takiej waluty");
                 clearTextFiels();
 
 
@@ -188,9 +189,9 @@ public class Windownew extends JFrame implements ActionListener {
 
             } else {
 
-                str.remove(0);
-                Uwagi.setText("Nie ma takiej waluty");
+
                 clearTextFiels();
+
 
             }
             String money = null;
@@ -204,8 +205,8 @@ public class Windownew extends JFrame implements ActionListener {
             boolean numeric = isNumeric(money);
 
             if (!numeric) {
-                Uwagi.setText("To nie jest liczba");
-                str.remove(1);
+                uwagi.add("To nie jest liczba");
+
                 clearTextFiels();
 
             } else {
@@ -242,7 +243,8 @@ public class Windownew extends JFrame implements ActionListener {
             } else {
                 przeliczButton = null;
                 str.clear();
-//                Uwagi.setText("Nie wszyskie pola wypełnione");
+
+               Uwagi.setText(uwagi.get(0));
 
 
             }
