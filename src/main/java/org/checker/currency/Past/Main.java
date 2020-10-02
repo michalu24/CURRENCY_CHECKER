@@ -40,6 +40,7 @@ public class Main {
 
         System.out.println(newSearch.findRateOfEUR(LocalDate.of(2020, 3, 3)));
 
+        System.out.println(newSearch.findRateOfEUR(LocalDate.of(2020, 3, 3)));
 
     }
 
