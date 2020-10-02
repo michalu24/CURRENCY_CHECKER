@@ -241,8 +241,7 @@ public class Windownew extends JFrame implements ActionListener {
                 str.clear();
 
             } else {
-                przeliczButton = null;
-                str.clear();
+
 
                Uwagi.setText(uwagi.get(0));
 
