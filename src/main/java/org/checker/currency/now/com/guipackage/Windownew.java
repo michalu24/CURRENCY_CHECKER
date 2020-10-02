@@ -66,7 +66,88 @@ public class Windownew extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
 
-        if (e.getSource() == wpiszpocz) {
+//        if (e.getSource() == wpiszpocz) {
+//            String pocz = null;
+//
+//            try {
+//                pocz = wpiszpocz.getText();
+//            } catch (NoSuchElementException a) {
+//                a.printStackTrace();
+//            } catch (IllegalStateException a) {
+//                a.printStackTrace();
+//            }
+//            boolean validate = AllCurrenciesReflection.validate(pocz);
+//            if (validate) {
+//
+//
+//                str.add(pocz);
+//                Uwagi.setText("Możesz przejść dalej");
+//
+//
+//            } else {
+//                str.remove(2);
+//                Uwagi.setText("Nie ma takiej waluty");
+//
+//
+//            }
+//
+//        }
+//        if (e.getSource() == wpiszkonc) {
+//
+//            String konc = null;
+//
+//            try {
+//                konc = wpiszkonc.getText();
+//            } catch (NoSuchElementException a) {
+//                a.printStackTrace();
+//            } catch (IllegalStateException a) {
+//                a.printStackTrace();
+//            }
+//            boolean validate = AllCurrenciesReflection.validate(konc);
+//            if (validate) {
+//
+//                str.add(konc);
+//                Uwagi.setText("Teraz wciśnij przycisk zamiany");
+//
+//
+//            } else {
+//
+//                str.remove(0);
+//                Uwagi.setText("Nie ma takiej waluty");
+//
+//
+//            }
+//        }
+//        if (e.getSource() == wpiszpieniadze) {
+//            String money = null;
+//            try {
+//                money = wpiszpieniadze.getText();
+//
+//            } catch (IllegalStateException a) {
+//                a.printStackTrace();
+//            }
+////
+//            boolean numeric = isNumeric(money);
+//
+//            if (!numeric) {
+//                Uwagi.setText("To nie jest liczba");
+//                str.remove(1);
+//
+//
+//            } else {
+//
+//
+//                Uwagi.setText("Przejdź dalej");
+//
+//                str.add(money);
+//            }
+//
+//        }
+
+
+//
+
+        if (e.getSource() == przeliczButton) {
             String pocz = null;
 
             try {
@@ -85,15 +166,11 @@ public class Windownew extends JFrame implements ActionListener {
 
 
             } else {
-                str.remove(2);
+                str.clear();
                 Uwagi.setText("Nie ma takiej waluty");
 
 
             }
-
-        }
-        if (e.getSource() == wpiszkonc) {
-
             String konc = null;
 
             try {
@@ -103,8 +180,8 @@ public class Windownew extends JFrame implements ActionListener {
             } catch (IllegalStateException a) {
                 a.printStackTrace();
             }
-            boolean validate = AllCurrenciesReflection.validate(konc);
-            if (validate) {
+            boolean validate2 = AllCurrenciesReflection.validate(konc);
+            if (validate2) {
 
                 str.add(konc);
                 Uwagi.setText("Teraz wciśnij przycisk zamiany");
@@ -117,8 +194,6 @@ public class Windownew extends JFrame implements ActionListener {
 
 
             }
-        }
-        if (e.getSource() == wpiszpieniadze) {
             String money = null;
             try {
                 money = wpiszpieniadze.getText();
@@ -142,41 +217,42 @@ public class Windownew extends JFrame implements ActionListener {
                 str.add(money);
             }
 
-        }
 
-
-        if (e.getSource() == przeliczButton) {
-            if (str.size() == 3) {
+            if (str.size() == 3 && !str.contains(null)) {
                 BuildResponse buildResponse = new BuildResponse();
 
 
                 double response1 = 0;
                 System.out.println(str);
                 try {
-                    response1 = buildResponse.createResponse(str.get(0), str.get(2), str.get(1));
+                    response1 = buildResponse.createResponse(str.get(0), str.get(1), str.get(2));
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
                 double roundValue = Math.round(response1);
                 String wyniki = String.valueOf(roundValue);
-                wynik.setText(wyniki + "  " + str.get(2));
+                wynik.setText(wyniki);
 //            try {
 //                response = buildResponse.createResponse(str.get(0),str.get(1),str.get(2));
 //            } catch (IOException ioException) {
 //                ioException.printStackTrace();
 //            }
-//            System.out.println(response);
+//            System.out.println(response);\\\
+                str.clear();
 
             } else {
+                przeliczButton = null;
+                str.clear();
                 Uwagi.setText("Nie wszyskie pola wypełnione");
 
 
             }
 
 //        }
-
-
         }
+
+
+
     }
 
     public static boolean isNumeric(String str) {
