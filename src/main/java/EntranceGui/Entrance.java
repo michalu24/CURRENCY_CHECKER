@@ -39,9 +39,10 @@ public class Entrance extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent a) {
         if(a.getSource() == kursWalutyWCzasieButton){
-            Windownew.showWindow();
+
         }
         if(a.getSource()==kursWalutyWCzasieButton1){
+            Windownew.showWindow();
 
         }
 
