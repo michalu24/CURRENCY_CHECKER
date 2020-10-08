@@ -58,7 +58,7 @@ public class Windownew extends JFrame implements ActionListener {
     }
 
 
-    public static void main(String[] args) {
+    public static void showWindow(){
         Windownew windownew = new Windownew("Po wpisaniu wartości zatwierdź eneterem");
     }
 
