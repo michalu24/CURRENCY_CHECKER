@@ -229,7 +229,7 @@ public class Windownew extends JFrame implements ActionListener {
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
-                double roundValue = Math.round(response1);
+                double roundValue =response1;
                 String wyniki = String.valueOf(roundValue);
                 wynik.setText(wyniki  + " \t" + str.get(1));
 //            try {
